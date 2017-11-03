@@ -1,0 +1,63 @@
+<div class="navbar-fixed">
+    <nav class="green accent-4">
+        <div class="nav-wrapper container">
+            <a routerLink="/home" class="brand-logo">Logo</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a routerLink="/creations">Mes créations</a></li>
+                <li><a routerLink="/articles">Articles</a></li>
+                <li><a href="info.html">Qui suis-je?</a></li>
+                <li><a routerLink="/admin">Backoffice</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="creations.html">Mes créations</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="info.html">Qui suis-je?</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<router-outlet></router-outlet>
+<footer class="page-footer teal">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Company Bio</h5>
+                <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+            </div>
+
+            <div class="col l3 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li>
+                        <a href="#" class="white-text">Accueil</a>
+                    </li>
+                    <li>
+                        <a class="white-text">Informations</a>
+                    </li>
+                    <li>
+                        <a class="white-text">Articles</a>
+                    </li>
+                    <li>
+                        <a class="white-text">Résultats</a>
+                    </li>
+                    <li>
+                        <a class="white-text">Mon espace</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col l3 s12 reseautage">
+                <ul>
+                    <li><a href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Google +"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            Made by <a class="brown-text text-lighten-3" href="#">Dylan Vansteenacker</a>
+        </div>
+    </div>
+</footer>

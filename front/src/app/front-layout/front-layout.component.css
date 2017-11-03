@@ -1,0 +1,47 @@
+.row {
+    margin-bottom: 0;
+}
+
+.limit-height-main .card img{
+    max-height: 309px;
+}
+
+#mainContent {
+    background-image: url("../../assets/images/bg-main.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+links-footer li a {
+    color: white;
+}
+
+fieldset {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.well-pad, .row .well-pad {
+    padding: 50px 50px;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.illustrator-container {
+    min-height: 380px;
+}
+
+#infoBanner {
+    background-image: url("../../assets/images/bg-main.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}

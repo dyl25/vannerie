@@ -1,0 +1,6 @@
+<h2>LOGIN</h2>
+<p>{{message}}</p>
+<p>
+    <button (click)="login()"  *ngIf="!authService.isLoggedIn" onclick="Materialize.toast('Connecté !', 1000, 'green accent-4')">Login</button>
+    <button (click)="logout()" *ngIf="authService.isLoggedIn" onclick="Materialize.toast('Déconnecté !', 1000, 'red accent-4')">Logout</button>
+</p>

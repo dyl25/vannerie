@@ -1,0 +1,53 @@
+/* Backoffice */
+.sideBack {
+    position: fixed;
+    padding: 0;
+    background-color: rgb(42, 63, 84);
+    height: 100%;
+}
+
+.sideBack a {
+    color: white;
+}
+
+.sideBack,.sideBack .collapsible-header ,.sideBack .collapsible-body, .sideBack .collapsible-body {
+    background-color: rgb(42, 63, 84);
+}
+
+.sideBack .collapsible, .sideBack .collapsible-header, .sideBack .collapsible-body {
+    border: inherit;
+}
+
+.sideBack a:hover,
+.side-nav a:hover {
+    background-color: rgb(51, 69, 86);
+    border-bottom: 1px solid rgb(26, 187, 156);
+}
+
+.sideBack a:not(.collapsible-header) {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+}
+
+.sideBack .collapsible .collapsible-body a,
+.side-nav .collapsible .collapsible-body a {
+    text-align: center;
+}
+
+.card-stat {
+    box-sizing: inherit;
+    height: 150px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+.card-stat p {
+    margin: 0px 0px 10px;
+}
+
+table.highlight > tbody > tr:hover {
+    background-color: #e0e0e0;
+}
+/* End backoffice */
