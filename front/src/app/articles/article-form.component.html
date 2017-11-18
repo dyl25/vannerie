@@ -1,0 +1,50 @@
+<div *ngIf="articleErrors.length > 0" class="card-panel red white-text">
+  <p *ngFor="let error of articleErrors">
+    {{error}}
+  </p>
+</div>
+
+<form [formGroup]="articleForm" (ngSubmit)="onSubmit()" novalidate>
+  <fieldset>
+
+    <!-- Text input-->
+    <div>
+      <label for="title">Titre</label>
+      <input id="title" name="title" type="text" formControlName="title">
+      <div *ngIf="title.invalid && (title.dirty || title.touched)" class="card-panel red white-text">
+        <div *ngIf="title.errors.required">
+          Le titre est requis.
+        </div>
+        <div *ngIf="title.errors.minlength">
+          Le titre doit compter minimum 5 caractères.
+        </div>
+        <div *ngIf="title.errors.maxlength">
+          Le titre doit compter maximum 191 caractères.
+        </div>
+      </div>
+    </div>
+
+    <!-- Textarea -->
+    <div>
+      <label for="content">Contenu de l'article</label>
+      <textarea class="materialize-textarea" id="content" name="content" formControlName="content"></textarea>
+      <div *ngIf="content.invalid && (content.dirty || content.touched)" class="card-panel red white-text">
+        <div *ngIf="content.errors.required">
+          Le contenu est requis.
+        </div>
+        <div *ngIf="content.errors.minlength">
+          Le contenu doit compter minimum 10 caractères.
+        </div>
+      </div>
+    </div>
+
+    <button name="btSendArticle" class="btn green accent-4" type="submit"
+    [disabled]="articleForm.pristine || !articleForm.valid">Ajouter l'article</button>
+    <button name="btSendArticle" class="btn red accent-4" type="reset"
+    (click)="revert()" [disabled]="articleForm.pristine">Revert</button>
+
+  </fieldset>
+</form>
+<p>Form value: {{ articleForm.value | json }}</p>
+<p>Form status: {{ articleForm.status | json }}</p>
+<p>errors: {{ content.errors | json }}</p>
