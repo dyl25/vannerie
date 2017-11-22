@@ -19,21 +19,21 @@ export class LoginComponent {
         this.message = 'Logged' + (this.authService.isLoggedIn ? 'in' : 'out');
     }
 
-    login() {
-        this.message = 'Tentative de connexion ...';
-        
-        this.authService.login().subscribe(() => {
-            this.setMessage();
-            
-            if (this.authService.isLoggedIn) {
-                let redirect = this.authService.redirectUrl ? 
-                this.authService.redirectUrl : '/admin';
-                
-                this.router.navigate([redirect]);
-            }
-        });
-    }
-    
+    // login() {
+    //     this.message = 'Tentative de connexion ...';
+    //
+    //     this.authService.login().subscribe(() => {
+    //         this.setMessage();
+    //
+    //         if (this.authService.isLoggedIn) {
+    //             let redirect = this.authService.redirectUrl ?
+    //             this.authService.redirectUrl : '/admin';
+    //
+    //             this.router.navigate([redirect]);
+    //         }
+    //     });
+    // }
+
     logout() {
         this.authService.logout();
         this.setMessage();

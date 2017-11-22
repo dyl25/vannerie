@@ -15,6 +15,7 @@ import { LoginRoutingModule } from './login/login-routing.module';
 import { LoginComponent } from './login/login.component';
 import { DialogMessageComponent } from './dialog-message/dialog-message.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { SubscribeComponent } from './subscribe/subscribe.component';
         FrontLayoutComponent,
         LoginComponent,
         DialogMessageComponent,
-        SubscribeComponent
+        SubscribeComponent,
+        UsersComponent
     ],
     imports: [
         BrowserModule,

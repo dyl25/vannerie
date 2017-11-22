@@ -8,32 +8,31 @@ import { AddArticleComponent }     from './add-article.component';
 import { EditArticleComponent }     from './edit-article.component';
 
 const articlesRoutes: Routes = [
-
-  {path: '', component: ArticlesComponent},
-  {
-    path: ':id',
-    component: ArticleDetailComponent,
-    resolve: {article: ArticleDetailResolver},
-  },
-  {path: 'add/:id', component: AddArticleComponent},
-  {
-    path: 'edit/:id',
-    component: EditArticleComponent, 
-    resolve:{article: ArticleDetailResolver}
-  },
+    {path: '', component: ArticlesComponent},
+    {
+        path: ':id',
+        component: ArticleDetailComponent,
+        resolve: {article: ArticleDetailResolver},
+    },
+    {path: 'add/:id', component: AddArticleComponent},
+    {
+        path: 'edit/:id',
+        component: EditArticleComponent,
+        resolve:{article: ArticleDetailResolver}
+    }
 
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forChild(articlesRoutes)
-  ],
-  exports: [
-    RouterModule
-  ],
-  providers: [
-    ArticleDetailResolver
-  ]
+    imports: [
+        RouterModule.forChild(articlesRoutes)
+    ],
+    exports: [
+        RouterModule
+    ],
+    providers: [
+        ArticleDetailResolver
+    ]
 })
 
 export class ArticlesRoutingModule { }

@@ -22,9 +22,9 @@ export class ArticleDetailComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe((data: {article: Article}) => {
       this.article = data.article;
-      let perso = {'grant_type': 'password', 'client_id': '2'};
+      /*let perso = {'grant_type': 'password', 'client_id': '2'};
       let merge = this.article;
-      console.log({merge, perso});
+      console.log(Object.assign(merge, perso));*/
     });
   }
 

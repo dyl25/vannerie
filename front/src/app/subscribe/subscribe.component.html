@@ -1,3 +1,61 @@
-<p>
-  subscribe works!
-</p>
+<div class="container">
+    <div class="row">
+        <div *ngIf="subscribeErrors.length > 0" class="card-panel red white-text">
+            <p *ngFor="let error of subscribeErrors">
+                {{error}}
+            </p>
+        </div>
+
+        <form [formGroup]="subscribeForm" (ngSubmit)="onSubmit()" novalidate>
+            <fieldset>
+
+                <div>
+                    <label for="username">Nom d'utilisateur</label>
+                    <input id="username" name="username" type="text" formControlName="username">
+                    <div *ngIf="username.invalid && (username.dirty || username.touched)" class="card-panel red white-text">
+                        <div *ngIf="username.errors.required">
+                            Le nom d'utilisateur est requis.
+                        </div>
+                    </div>
+                </div>
+                <!-- <div>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" formControlName="email">
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="card-panel red white-text">
+                        <div *ngIf="email.errors.required">
+                            L'email est requis.
+                        </div>
+                    </div>
+                </div> -->
+                <div>
+                    <label for="password">Mot de passe</label>
+                    <input id="password" name="password" type="password" formControlName="password">
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="card-panel red white-text">
+                        <div *ngIf="password.errors.required">
+                            Le mot de passe est requis.
+                        </div>
+                    </div>
+                </div>
+                <!-- <div>
+                    <label for="password_confirmation">Confirmation du mot de passe</label>
+                    <input id="password_confirmation" name="password_confirmation" type="password" formControlName="password_confirmation">
+                    <div *ngIf="password_confirmation.invalid && (password_confirmation.dirty || password_confirmation.touched)" class="card-panel red white-text">
+                        <div *ngIf="password_confirmation.errors.required">
+                            La confirmation est requise.
+                        </div>
+                    </div>
+                </div> -->
+
+
+                <button name="btSendUser" class="btn green accent-4" type="submit"
+                [disabled]="subscribeForm.pristine || !subscribeForm.valid">S'inscrire</button>
+                <!-- <button name="btResetSub" class="btn red accent-4" type="reset"
+                (click)="revert()" [disabled]="subscribeForm.pristine">Revert</button> -->
+
+            </fieldset>
+        </form>
+        <p>Form value: {{ subscribeForm.value | json }}</p>
+        <p>Form status: {{ subscribeForm.status | json }}</p>
+        <!-- <p>errors: {{ content.errors | json }}</p> -->
+    </div>
+</div>

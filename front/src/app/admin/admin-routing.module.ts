@@ -8,17 +8,17 @@ import {AdminArticleComponent} from './admin-article.component';
 
 const adminRoutes: Routes = [
     {
-        path: 'admin',
+        path: '',
         component: AdminComponent,
-        canActivate: [AuthGuard],
+        //canActivate: [AuthGuard],
         children: [
-            {
+            /*{
                 path: '',
-                children: [
+                children: [*/
                     {path: '', component: AdminDashboardComponent},
                     {path: 'articles', component: AdminArticleComponent}
-                ],
-            },
+                /*],
+            },*/
         ]
     }
 ];

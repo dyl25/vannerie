@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -69,7 +70,11 @@ class RegisterController extends Controller
         ]);
     }
 
-    /*protected function registered(Request $request, $user) {
-
-    }*/
+    protected function registered(Request $request, $user) {
+        if($request->wantsJson()) {
+            $token = $user->createToken($user->id, [''])->accessToken;
+            return response()->json(['token' => $token], 201);
+        }
+        return false;
+    }
 }
