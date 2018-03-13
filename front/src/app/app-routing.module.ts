@@ -5,6 +5,7 @@ import {FrontLayoutComponent} from './front-layout/front-layout.component';
 import {HomeComponent} from './home/home.component';
 import {ArticlesComponent} from './articles/articles.component';
 import {CreationsComponent} from './creations/creations.component';
+import {LoginComponent} from './login/login.component';
 import {SubscribeComponent} from './subscribe/subscribe.component';
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
             {path: 'subscribe', component: SubscribeComponent},
         ]
     },
+    {path: 'login', component: LoginComponent},
     {path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule'}
 ];
 

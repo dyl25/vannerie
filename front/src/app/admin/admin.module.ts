@@ -5,6 +5,7 @@ import { AdminComponent } from './admin.component';
 import { AdminDashboardComponent } from './admin-dashboard.component';
 import { AdminArticleComponent } from './admin-article.component';
 import { AdminRoutingModule } from './admin-routing.module';
+import {AuthService} from '../auth.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { AdminRoutingModule } from './admin-routing.module';
       AdminComponent,
       AdminDashboardComponent,
       AdminArticleComponent
-  ]
+  ],
+  providers: [AuthService]
 })
 export class AdminModule { }

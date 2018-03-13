@@ -21,17 +21,17 @@ export class SubscribeComponent {
         this.createForm();
     }
 
-    get username() { return this.subscribeForm.get('username') }
+    get name() { return this.subscribeForm.get('name') }
     get email() { return this.subscribeForm.get('email') }
     get password() { return this.subscribeForm.get('password') }
     get password_confirmation() { return this.subscribeForm.get('password_confirmation') }
 
     createForm() {
         this.subscribeForm = this.fb.group({
-            username: ['', [Validators.required]],
-            //email: ['', [Validators.required]],
+            name: ['', [Validators.required]],
+            email: ['', [Validators.required]],
             password: ['', [Validators.required]],
-            //password_confirmation: ['', [Validators.required]]
+            password_confirmation: ['', [Validators.required]]
         });
     }
 

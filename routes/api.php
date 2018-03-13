@@ -13,10 +13,20 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::post('subscribe', 'Auth\RegisterController@register');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('refresh', 'Auth\LoginController@refresh');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('subscribe', 'Auth\RegisterController@register');
+
+Route::middleware('auth:api')->group(function() {
+    Route::get('/user', function (Request $request) {
+        return Auth::user();
+    });
+    Route::post('logout', 'Auth\LoginController@logout');
+});
 
 Route::get('articles', 'ArticleController@index');
 Route::get('articles/{article}', 'ArticleController@show');

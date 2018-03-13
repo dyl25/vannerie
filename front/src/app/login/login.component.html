@@ -1,6 +1,49 @@
 <h2>LOGIN</h2>
 <p>{{message}}</p>
-<p>
+<div class="container">
+    <div class="row">
+        <div *ngIf="loginErrors.length > 0" class="card-panel red white-text">
+            <p *ngFor="let error of loginErrors">
+                {{error}}
+            </p>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+            <fieldset>
+
+                <div>
+                    <label for="username">Nom d'utilisateur</label>
+                    <input id="username" name="username" type="text" formControlName="username">
+                    <div *ngIf="username.invalid && (username.dirty || username.touched)" class="card-panel red white-text">
+                        <div *ngIf="username.errors.required">
+                            Le nom d'utilisateur est requis.
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="password">Mot de passe</label>
+                    <input id="password" name="password" type="password" formControlName="password">
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="card-panel red white-text">
+                        <div *ngIf="password.errors.required">
+                            Le mot de passe est requis.
+                        </div>
+                    </div>
+                </div>
+
+                <button name="btSendLogin" class="btn green accent-4" type="submit"
+                [disabled]="loginForm.pristine || !loginForm.valid">Se connecter</button>
+                <!-- <button name="btResetSub" class="btn red accent-4" type="reset"
+                (click)="revert()" [disabled]="subscribeForm.pristine">Revert</button> -->
+
+            </fieldset>
+        </form>
+        <p>Form value: {{ loginForm.value | json }}</p>
+        <p>Form status: {{ loginForm.status | json }}</p>
+        <!-- <p>errors: {{ content.errors | json }}</p> -->
+    </div>
+</div>
+
+<!--<p>
     <button (click)="login()"  *ngIf="!authService.isLoggedIn" onclick="Materialize.toast('Connecté !', 1000, 'green accent-4')">Login</button>
     <button (click)="logout()" *ngIf="authService.isLoggedIn" onclick="Materialize.toast('Déconnecté !', 1000, 'red accent-4')">Logout</button>
-</p>
+</p>-->
