@@ -2,29 +2,33 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/throw'
+import { of } from 'rxjs/observable/of'
 import { map, catchError } from 'rxjs/operators';
 import { Article } from './article';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+}
 
 @Injectable()
 export class ArticlesService {
 
   private articlesUrl = 'api/articles'
-  private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   constructor(private http: HttpClient) { }
 
   getArticle(id: number): Observable<Article> {
-    return this.http.get(`${this.articlesUrl}/${id}`).pipe(
-      map(article => { return article }),
-      catchError(this.handleError)
+    const url = `${this.articlesUrl}/${id}`;
+
+    return this.http.get<Article>(url).pipe(
+      catchError(this.handleError<Article>(`getArticle id=${id}`))
     );
   }
 
   getArticles(): Observable<Article[]> {
     return this.http
-      .get(this.articlesUrl).pipe(
-        catchError(this.handleError)
+      .get<Article[]>(this.articlesUrl).pipe(
+        catchError(this.handleError<Article[]>('getArticles', []))
       );
   }
 
@@ -32,17 +36,19 @@ export class ArticlesService {
     const url = `${this.articlesUrl}/${article.id}`;
 
     return this.http
-      .patch(url, JSON.stringify(article), { headers: this.headers })
+      .patch(url, article, httpOptions)
       .pipe(
-        map(res => res as Article),
-        catchError(this.handleError)
+        catchError(this.handleError<any>('updateArticle'))
       );
   }
 
-  private handleError(error: any): Observable<any> {
-    console.error('Une erreur s\'est produite', error);
+  private handleError<T>(operation = 'operation', result?: T) {
 
-    return Observable.throw(error.message || error);
+    return (error: any): Observable<T> => {
+      console.error('Une erreur s\'est produite', error);
+
+      return of(result as T);
+    }
   }
 
 }
