@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
-import {Article} from './article';
-import {ArticlesService} from './articles.service';
+import {Article} from '../shared/models/article';
+import { ArticlesService } from '../shared/services/articles.service';
 
 @Component({
     selector: 'app-articles',

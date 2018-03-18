@@ -2,8 +2,8 @@ import {Component, Input, OnChanges} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
-import {Article} from './article';
-import {ArticlesService} from './articles.service';
+import { Article } from '../../shared/models/article';
+import { ArticlesService } from '../../shared/services/articles.service';
 
 @Component({
     selector: 'article-form',

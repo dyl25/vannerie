@@ -10,8 +10,8 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 
-import {Article} from './article';
-import {ArticlesService} from './articles.service';
+import {Article} from '../../shared/models/article';
+import { ArticlesService } from '../../shared/services/articles.service';
 
 @Injectable()
 export class ArticleDetailResolver implements Resolve<Article> {
@@ -22,7 +22,6 @@ export class ArticleDetailResolver implements Resolve<Article> {
     let id: number = +route.params['id'];
 
     return this.articlesService.getArticle(id).pipe(
-      take(1),
       map(article => {
         if(article) {
           return article;

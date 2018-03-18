@@ -2,8 +2,8 @@ import { NgModule }                 from '@angular/core';
 import { RouterModule, Routes }     from '@angular/router';
 
 import { ArticlesComponent }     from './articles.component';
-import {ArticleDetailComponent} from './article-detail.component';
-import {ArticleDetailResolver} from './article-detail-resolver.service';
+import {ArticleDetailComponent} from './article-detail/article-detail.component';
+import {ArticleDetailResolver} from './article-detail/article-detail-resolver.service';
 import { AddArticleComponent }     from './add-article.component';
 import { EditArticleComponent }     from './edit-article.component';
 

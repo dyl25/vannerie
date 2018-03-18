@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
 
-import {Article} from './article';
+import {Article} from '../shared/models/article';
 
 @Component({
-    selector: 'app-articles',
+    selector: 'app-articles-add',
     template: `
     <section class="row">
       <h2>Ajouter un article</h2>

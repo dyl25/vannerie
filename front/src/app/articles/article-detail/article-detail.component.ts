@@ -1,13 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
-import {Article} from './article';
-import {ArticlesService} from './articles.service';
+import { Article } from '../../shared/models/article';
+import { ArticlesService } from '../../shared/services/articles.service';
 
 @Component({
   selector: 'app-article-detail',
-  templateUrl: './article-detail.component.html',
-  //styleUrls: ['./article-detail.component.css']
+  templateUrl: './article-detail.component.html'
 })
 export class ArticleDetailComponent implements OnInit {
 
@@ -22,9 +21,6 @@ export class ArticleDetailComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe((data: {article: Article}) => {
       this.article = data.article;
-      /*let perso = {'grant_type': 'password', 'client_id': '2'};
-      let merge = this.article;
-      console.log(Object.assign(merge, perso));*/
     });
   }
 

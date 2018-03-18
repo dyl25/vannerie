@@ -16,6 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { DialogMessageComponent } from './dialog-message/dialog-message.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
 import { UsersComponent } from './users/users.component';
+import { SharedModule } from './shared/shared.module';
+import { ArticlesService } from './shared/services/articles.service';
 
 @NgModule({
     declarations: [
@@ -35,10 +37,12 @@ import { UsersComponent } from './users/users.component';
         CreationsModule,
         HttpClientModule,
         AdminModule,
-        LoginRoutingModule
+        LoginRoutingModule,
+        SharedModule
     ],
     providers: [
-        Title
+        Title,
+        ArticlesService
     ],
     bootstrap: [AppComponent]
 })
