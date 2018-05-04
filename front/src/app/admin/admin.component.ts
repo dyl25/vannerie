@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {AuthService} from '../auth.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-admin',
@@ -9,19 +9,19 @@ import {AuthService} from '../auth.service';
 })
 export class AdminComponent implements OnInit {
 
-    currentUser;
+  currentUser;
 
   constructor(private authService: AuthService) { }
 
-  getCurrentUser(): void {
+  /*getCurrentUser(): void {
       this.authService.getCurrentUser().subscribe(user => {
         this.currentUser = user;
       });
-  }
+  }*/
 
   ngOnInit() {
-      this.getCurrentUser();
-      console.log(this.currentUser);
+    //this.getCurrentUser();
+    //console.log(this.currentUser);
   }
 
 }

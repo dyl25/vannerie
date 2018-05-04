@@ -1,0 +1,38 @@
+<!-- Articles table -->
+<section class="card-panel grey lighten-4 hoverable">
+    <h2>Liste des articles
+        <i class="material-icons medium">library_books</i>
+    </h2>
+    <a href="" class="btn btn-primary">Ajouter un article</a>
+    <table class="bordered highlight">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th>Auteur</th>
+                <th>Date de création</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let article of articles">
+                <td>{{ article.id }}</td>
+                <td>
+                    <a routerLink="{{article.id}}">{{ article.title | strLimit:50:'...'}}</a>
+                </td>
+                <td>{{ article.content | strLimit:50:'...' }}</td>
+                <td>{{ article.author.name }}</td>
+                <td>{{ article.created_at | date:'d/M/y' }}</td>
+                <td>
+                    <a href="route('admin.articles.edit', $article->id)">
+                        <i class="material-icons tooltipped" data-position="top" data-delay="50" data-tooltip="éditer">mode_edit</i>
+                    </a>
+                    <a href="">
+                        <i class="material-icons red-text tooltipped" data-position="bottom" data-delay="50" data-tooltip="supprimer">delete</i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

@@ -5,8 +5,9 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
 import {map, catchError} from 'rxjs/operators';
+import { User } from './shared/models/user';
 
-import {User} from './users/user';
+
 
 @Injectable()
 export class AuthService {

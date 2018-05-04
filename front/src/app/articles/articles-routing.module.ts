@@ -1,24 +1,24 @@
-import { NgModule }                 from '@angular/core';
-import { RouterModule, Routes }     from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import { ArticlesComponent }     from './articles.component';
-import {ArticleDetailComponent} from './article-detail/article-detail.component';
-import {ArticleDetailResolver} from './article-detail/article-detail-resolver.service';
-import { AddArticleComponent }     from './add-article.component';
-import { EditArticleComponent }     from './edit-article.component';
+import { ArticlesComponent } from './articles.component';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import { ArticleDetailResolver } from './article-detail/article-detail-resolver.service';
+import { AddArticleComponent } from './add-article.component';
+import { EditArticleComponent } from './edit-article.component';
 
 const articlesRoutes: Routes = [
-    {path: '', component: ArticlesComponent},
+    { path: '', component: ArticlesComponent },
     {
         path: ':id',
         component: ArticleDetailComponent,
-        resolve: {article: ArticleDetailResolver},
+        resolve: { article: ArticleDetailResolver },
     },
-    {path: 'add/:id', component: AddArticleComponent},
+    { path: 'add/:id', component: AddArticleComponent },
     {
         path: 'edit/:id',
         component: EditArticleComponent,
-        resolve:{article: ArticleDetailResolver}
+        resolve: { article: ArticleDetailResolver }
     }
 
 ];

@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
 import { AuthService } from '../auth.service';
-import { User } from '../users/user';
+import { User } from '../shared/models/user';
 
 @Component({
     selector: 'app-subscribe',

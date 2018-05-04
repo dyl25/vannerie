@@ -32,16 +32,17 @@ export class ArticlesComponent implements OnInit {
         this.router.navigate(link);
     }
 
-    addArticle() {
+    /*addArticle() {
         let article = {"id": 5620,
             "title": "bla bla bla",
             "slug": "bla-bla",
             "content": "bla bla bla bla bla bla bla bla bla bla bla bla",
+            "author": User,
             "created_at": new Date(),
             "updated_at": new Date()
         };
         this.articles.unshift(article);
         this.appear = true;
-    }
+    }*/
 
 }

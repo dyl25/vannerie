@@ -3,19 +3,21 @@ import { CommonModule } from '@angular/common';
 
 import { AdminComponent } from './admin.component';
 import { AdminDashboardComponent } from './admin-dashboard.component';
-import { AdminArticleComponent } from './admin-article.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import {AuthService} from '../auth.service';
+import { SharedModule } from '../shared/shared.module';
+import { AdminArticlesModule } from './articles/admin-articles.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    SharedModule,
+    AdminArticlesModule
   ],
   declarations: [
       AdminComponent,
-      AdminDashboardComponent,
-      AdminArticleComponent
+      AdminDashboardComponent
   ],
   providers: [AuthService]
 })

@@ -4,7 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {AuthGuard} from '../auth-guard.service';
 import {AdminComponent} from './admin.component';
 import {AdminDashboardComponent} from './admin-dashboard.component';
-import {AdminArticleComponent} from './admin-article.component';
+import {AdminArticlesComponent} from './articles/admin-articles.component';
 
 const adminRoutes: Routes = [
     {
@@ -16,7 +16,7 @@ const adminRoutes: Routes = [
                 path: '',
                 children: [*/
                     {path: '', component: AdminDashboardComponent},
-                    {path: 'articles', component: AdminArticleComponent}
+                    {path: 'articles', component: AdminArticlesComponent}
                 /*],
             },*/
         ]
