@@ -9,7 +9,7 @@ import {
 } from '@angular/router';
 
 import {Article} from '../../shared/models/article';
-import { ArticlesService } from '../../shared/services/articles.service';
+import { ArticlesService } from '../../core/services/articles.service';
 
 @Injectable()
 export class ArticleDetailResolver implements Resolve<Article> {

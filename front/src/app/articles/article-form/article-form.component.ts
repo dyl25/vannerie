@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
 import { Article } from '../../shared/models/article';
-import { ArticlesService } from '../../shared/services/articles.service';
+import { ArticlesService } from '../../core/services/articles.service';
 
 @Component({
     selector: 'article-form',

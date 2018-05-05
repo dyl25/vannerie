@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {AuthGuard} from '../auth-guard.service';
+import {AuthGuard} from '../core/guards/auth-guard.service';
 import {AdminComponent} from './admin.component';
 import {AdminDashboardComponent} from './admin-dashboard.component';
 import {AdminArticlesComponent} from './articles/admin-articles.component';

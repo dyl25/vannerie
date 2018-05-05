@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin.component';
 import { AdminDashboardComponent } from './admin-dashboard.component';
 import { AdminRoutingModule } from './admin-routing.module';
-import {AuthService} from '../auth.service';
+import {AuthService} from '../core/services/auth.service';
 import { SharedModule } from '../shared/shared.module';
 import { AdminArticlesModule } from './articles/admin-articles.module';
 

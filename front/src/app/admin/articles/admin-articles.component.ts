@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Article } from "../../shared/models/article";
-import { ArticlesService } from "../../shared/services/articles.service";
+import { ArticlesService } from "../../core/services/articles.service";
 
 @Component({
   selector: 'app-admin-articles',
